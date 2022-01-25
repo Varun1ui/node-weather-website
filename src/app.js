@@ -5,6 +5,7 @@ const forecast=require('./utils/forecast')
 const hbs=require('hbs')
 
 const app=express()
+const port=process.env.PORT || 3000
 
 //define paths for express config
 const publicDirectoryPath=path.join(__dirname,'../public')
@@ -94,6 +95,6 @@ app.get('*',(req,res)=>{
     res.render('error',{title:'404',errorMessage:'Page not found',
     name:'Varun'})
 })
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000');
+app.listen(port,()=>{
+    console.log('Server is up on port '+port);
 })
